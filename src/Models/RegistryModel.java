@@ -32,22 +32,32 @@ public class RegistryModel {
 
     }
 
-    public void addCat() {
+    public void addCat(String name, Date birthDate, String owner, boolean vaccinated, String color, boolean neutered) {
 
-        
-
-    }
-
-    public void addDog() {
+        Cat cat = new Cat(name, birthDate, owner, vaccinated, color, neutered);
+        animals.add(cat);
+        counter.add();
 
     }
 
-    public void addHamster() {
+    public void addDog(String name, Date birthDate, String owner, boolean vaccinated, String breed, boolean trained) {
+
+        Dog dog = new Dog(name, birthDate, owner, vaccinated, breed, trained);
+        animals.add(dog);
+        counter.add();
 
     }
 
-    public ArrayList<Animal> getAnimals() {
-        return animals;
+    public void addHamster(String name, Date birthDate, String owner, boolean vaccinated, String cageType) {
+
+        Hamster hamster = new Hamster(name, birthDate, owner, vaccinated, cageType);
+        animals.add(hamster);
+        counter.add();
+
+    }
+
+    public ArrayList<Animal> getCurrentRegistry() {
+        return this.animals;
     }
 
 }
