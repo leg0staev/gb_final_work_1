@@ -3,13 +3,14 @@ package presenters;
 import Models.RegistryModel;
 import Views.View;
 
+import java.time.LocalDate;
+
 public class Presenter {
 
     private final RegistryModel model;
     private final View view;
 
     public Presenter(RegistryModel model, View view) {
-
         this.model = model;
         this.view = view;
     }
@@ -35,34 +36,88 @@ public class Presenter {
         return view.showAddPackAnimalMenu();
     }
 
-    public void addCamel(){
-
-    }
 
     public void addCat() {
         view.consoleClear();
         view.showCatAddinHeading();
 
+        String catName = view.getAnimalName();
+        LocalDate catBirth = view.getAnimalBirth();
+        String catOwner = view.getAnimalOwner();
+        boolean isCatVaccinated = view.isVaccinated();
+        String catColor = view.getColor();
+        boolean isCatNeutered = view.isNeutered();
 
-
-        
-        model.getCurrentRegistry();
+        model.addCat(catName, catBirth, catOwner, isCatVaccinated, catColor, isCatNeutered);
+        view.showSuccessAddinMess();
     }
 
     public void addDog() {
+        view.consoleClear();
+        view.showDogAddinHeading();
 
-    }
+        String dogName = view.getAnimalName();
+        LocalDate dogBirth = view.getAnimalBirth();
+        String dogOwner = view.getAnimalOwner();
+        boolean isDogVaccinated = view.isVaccinated();
+        String dogBreed = view.getBreed();
+        boolean isDogTrained = view.isTrained();
 
-    public void addDonkey() {
-
+        model.addDog(dogName, dogBirth, dogOwner, isDogVaccinated, dogBreed, isDogTrained);
+        view.showSuccessAddinMess();
     }
 
     public void addHamster() {
+        view.consoleClear();
+        view.showHamsterAddinHeading();
 
+        String hamsterName = view.getAnimalName();
+        LocalDate hamsterBirth = view.getAnimalBirth();
+        String hamsterOwner = view.getAnimalOwner();
+        boolean isHamsterVaccinated = view.isVaccinated();
+        String hamsterCageType = view.getCageType();
+
+        model.addHamster(hamsterName, hamsterBirth, hamsterOwner, isHamsterVaccinated, hamsterCageType);
+        view.showSuccessAddinMess();
+    }
+
+    public void addDonkey() {
+        view.consoleClear();
+        view.showDogAddinHeading();
+
+        String donkeyName = view.getAnimalName();
+        LocalDate donkeyBirth = view.getAnimalBirth();
+        int donkeyLoadCap = view.getLoadCapacity();
+        int donkeyEarLength = view.getEarLength();
+
+        model.addDonkey(donkeyName, donkeyBirth, donkeyLoadCap, donkeyEarLength);
+        view.showSuccessAddinMess();
+    }
+
+    public void addCamel() {
+        view.consoleClear();
+        view.showCamelAddinHeading();
+
+        String camelName = view.getAnimalName();
+        LocalDate camelBirth = view.getAnimalBirth();
+        int camelLoadCap = view.getLoadCapacity();
+        int camelHumpCount = view.getHumpCount();
+
+        model.addCamel(camelName, camelBirth, camelLoadCap, camelHumpCount);
+        view.showSuccessAddinMess();
     }
 
     public void addHorse() {
+        view.consoleClear();
+        view.showHorseAddinHeading();
 
+        String  horseName = view.getAnimalName();
+        LocalDate horseBirth = view.getAnimalBirth();
+        int  horseLoadCap = view.getLoadCapacity();
+        String horseMainColor = view.getColor();
+
+        model.addHorse(horseName, horseBirth, horseLoadCap, horseMainColor);
+        view.showSuccessAddinMess();
     }
 
     public void exitApp() {
@@ -75,7 +130,6 @@ public class Presenter {
         view.showUnknownCommMess();
         view.userWaiting();
     }
-    
 
 
- }
+}

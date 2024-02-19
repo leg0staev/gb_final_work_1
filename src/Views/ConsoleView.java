@@ -141,32 +141,18 @@ public class ConsoleView implements View {
 
     }
 
-    public String getUTF8Str(String strOnConsole){
-        System.out.print(strOnConsole);
-        String str = in.nextLine();
-        try {
-            byte bytes[];
-            bytes = str.getBytes(StandardCharsets.ISO_8859_1);
-            String resultStr = new String(bytes, StandardCharsets.UTF_8);
-            return resultStr;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-    
-    
+
     @Override
     public String getAnimalName() {
-            return getUTF8Str("Введите имя животного: ");
-        }
+        return getUTF8Str("Введите имя животного: ");
+    }
 
     @Override
     public LocalDate getAnimalBirth() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         LocalDate date = null;
         boolean validInput = false;
-        
+
         while (!validInput) {
             try {
                 System.out.print("Введите дату рождения в формате дд.ММ.гггг: ");
@@ -188,69 +174,96 @@ public class ConsoleView implements View {
 
     @Override
     public boolean isVaccinated() {
-        boolean validInput = false;
-
-        System.out.println("Животное вакцинировано?\n" + //
-        "________\n" + //
-        "1. да\n" + //
-        "2. нет\n" + //
-        "\n" + //
-        "Ваш выбор:");
-        String userChoice = in.nextLine();
-
-
-
-
-
-        return false;
+        return getBoolean("Питомец вакцинирован?");
     }
 
     @Override
     public int getLoadCapacity() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getLoadCapacity'");
+        return getInt("Введите грузоподъемность питомца: ");
     }
 
     @Override
     public String getColor() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getColor'");
+        return getUTF8Str("Введите цвет питомца: ");
     }
 
     @Override
     public boolean isNeutered() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isNeutered'");
+        return getBoolean("Питомец стерилизован?");
     }
 
     @Override
     public String getCageType() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCageType'");
+        return getUTF8Str("Введите тип клетки: ");
     }
 
     @Override
     public String getBreed() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getBreed'");
+        return getUTF8Str("Введите породу: ");
     }
 
     @Override
     public boolean isTrained() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isTrained'");
+        return getBoolean("Питомец дрессирован?");
     }
 
     @Override
     public int getEarLength() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getEarLength'");
+        return getInt("Введите длину ушей: ");
     }
 
     @Override
     public int getHumpCount() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getHumpCount'");
+        return getInt("Введите количество горбов: ");
+    }
+
+    private String getUTF8Str(String messageToConsole) {
+        System.out.print(messageToConsole);
+        String str = in.nextLine();
+        try {
+            byte[] bytes;
+            bytes = str.getBytes(StandardCharsets.ISO_8859_1);
+            return new String(bytes, StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private int getInt(String messageToConsole) {
+        boolean validInput = false;
+        System.out.print(messageToConsole);
+        int result = -1;
+
+        while (!validInput) {
+            try {
+                String userInput = in.nextLine();
+                result = Integer.parseInt(userInput);
+                validInput = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Неверный формат. Введите цифрами");
+            }
+        }
+        return result;
+    }
+
+    private boolean getBoolean(String messageToConsole) {
+        while (true) {
+            System.out.println(messageToConsole + "\n" + //
+                    "________\n" + //
+                    "1. да\n" + //
+                    "2. нет\n" + //
+                    "\n" + //
+                    "Ваш выбор:");
+            String userInput = in.nextLine();
+
+            if (userInput.equals("1") || userInput.equals("2")) {
+                return userInput.equals("1");
+            }
+            System.out.println("Некорректный ввод. Введите 1 или 2\n");
+        }
+
+
     }
 
 }

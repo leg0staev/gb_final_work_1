@@ -1,13 +1,14 @@
 package Models;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Cat extends Pet {
 
-    private String color;
-    private boolean neutered;
+    private final String color;
+    private final boolean neutered;
 
-    public Cat(String name, Date birthDate, String owner, boolean vaccinated, String color, boolean neutered) {
+    public Cat(String name, LocalDate birthDate, String owner, boolean vaccinated, String color, boolean neutered) {
         super(name, birthDate, owner, vaccinated);
         this.color = color;
         this.neutered = neutered;

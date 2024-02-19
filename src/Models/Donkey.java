@@ -1,12 +1,13 @@
 package Models;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Donkey extends PackAnimal {
 
-    private int earLength;
+    private final int earLength;
 
-    public Donkey(String name, Date birthDate, int loadCapacity, int earLength) {
+    public Donkey(String name, LocalDate birthDate, int loadCapacity, int earLength) {
         super(name, birthDate, loadCapacity);
         this.earLength = earLength;
     }

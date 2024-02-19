@@ -2,9 +2,9 @@ package Models;
 
 public class AnimalCounter {
 
-    private static int counter;
+    public static int counter = 0;
 
-    public void add() {
+    public static void add() {
         counter++;
     }
 
@@ -13,3 +13,4 @@ public class AnimalCounter {
     }
 
 }
+

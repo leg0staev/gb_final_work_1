@@ -1,12 +1,13 @@
 package Models;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Hamster extends Pet {
 
-    private String cageType;
+    private final String cageType;
 
-    public Hamster(String name, Date birthDate, String owner, boolean vaccinated, String cageType) {
+    public Hamster(String name, LocalDate birthDate, String owner, boolean vaccinated, String cageType) {
         super(name, birthDate, owner, vaccinated);
         this.cageType = cageType;
     }

@@ -1,16 +1,13 @@
 package Models;
-
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class Camel extends PackAnimal {
 
-    private int humpCount;
-    private boolean thirsty;
+    private final int humpCount;
 
-    public Camel(String name, Date birthDate, int loadCapacity, int humpCount, boolean thirsty) {
+    public Camel(String name, LocalDate birthDate, int loadCapacity, int humpCount) {
         super(name, birthDate, loadCapacity);
         this.humpCount = humpCount;
-        this.thirsty = thirsty;
 
     }
 
@@ -30,14 +27,10 @@ public class Camel extends PackAnimal {
         return humpCount;
     }
 
-    public boolean isThirsty() {
-        return thirsty;
-    }
-
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return "Camel [humpCount=" + humpCount + ", thirsty=" + thirsty + "]";
+        return "Camel [humpCount=" + humpCount + ", thirsty="  + "]";
     }
 
 }

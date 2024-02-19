@@ -1,12 +1,12 @@
 package Models;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 public abstract class PackAnimal extends Animal {
 
-    private int loadCapacity;
+    private final int loadCapacity;
 
-    public PackAnimal(String name, Date birthDate, int loadCapacity) {
+    public PackAnimal(String name, LocalDate birthDate, int loadCapacity) {
         super(name, birthDate);
         this.loadCapacity = loadCapacity;
     }

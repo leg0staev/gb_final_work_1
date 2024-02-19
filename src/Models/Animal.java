@@ -1,15 +1,16 @@
 package Models;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public abstract class Animal {
 
-    private String name;
-    private Date birthDate;
+    private final String name;
+    private final LocalDate birthDate;
     private ArrayList<String> commands;
 
-    public Animal(String name, Date birthDate) {
+    public Animal(String name, LocalDate birthDate) {
         this.name = name;
         this.birthDate = birthDate;
     }
@@ -20,7 +21,7 @@ public abstract class Animal {
         return name;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 

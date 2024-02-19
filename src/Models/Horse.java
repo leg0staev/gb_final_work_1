@@ -1,12 +1,13 @@
 package Models;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Horse extends PackAnimal {
 
-    private String maneColor;
+    private final String maneColor;
 
-    public Horse(String name, Date birthDate, int loadCapacity, String maneColor) {
+    public Horse(String name, LocalDate birthDate, int loadCapacity, String maneColor) {
         super(name, birthDate, loadCapacity);
         this.maneColor = maneColor;
     }

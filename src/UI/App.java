@@ -7,7 +7,12 @@ import presenters.Presenter;
 
 public class App {
 
-    static View view = new ConsoleView();
+    static View view;
+
+    static {
+        view = new ConsoleView();
+    }
+
     static RegistryModel model = new RegistryModel();
     static Presenter presenter = new Presenter(model, view);
 
@@ -38,7 +43,6 @@ public class App {
                                         break;
                                     default:
                                         presenter.unknownCommand();
-
                                 }
                             break;
                         case "2":

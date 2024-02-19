@@ -1,13 +1,14 @@
 package Models;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Dog extends Pet {
 
-    private String breed;
-    private boolean trained;
+    private final String breed;
+    private final boolean trained;
 
-    public Dog(String name, Date birthDate, String owner, boolean vaccinated, String breed, boolean trained) {
+    public Dog(String name, LocalDate birthDate, String owner, boolean vaccinated, String breed, boolean trained) {
         super(name, birthDate, owner, vaccinated);
         this.trained = trained;
         this.breed = breed;
