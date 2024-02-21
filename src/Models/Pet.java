@@ -27,17 +27,5 @@ public abstract class Pet extends Animal {
     }
 
     public abstract void play();
-
-    public String getName() {
-        return super.getName();
-    }
-
-    public LocalDate getBirthDate() {
-        return super.getBirthDate();
-    }
-
-    public ArrayList<String> getCommands() {
-        return super.getCommands();
-    }
-
+    
 }

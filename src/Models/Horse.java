@@ -31,10 +31,11 @@ public class Horse extends PackAnimal {
     @Override
     public String toString() {
         return "Питомец - Конь\n" + //
-                "кличка - " + super.getName() + "\n" + //
-                "дата рождения - " + super.getBirthDate() + "\n" + //
-                "грузоподъемность - " + super.getLoadCapacity() + "\n" + //
-                "Колиество горбов - " + this.getManeColor();
+                "кличка - " + this.getName() + "\n" + //
+                "дата рождения - " + this.getBirthDate() + "\n" + //
+                "грузоподъемность - " + this.getLoadCapacity() + "\n" + //
+                "Колиество горбов - " + this.getManeColor() + "\n" + //
+                "команды животного - " +  this.getCommands();
     }
 
 }

@@ -42,7 +42,7 @@ public class Dog extends Pet {
     public String toString() {
 
         String vaccinated = "нет";
-        if (super.isVaccinated()) {
+        if (this.isVaccinated()) {
             vaccinated = "да";
         }
 
@@ -52,12 +52,13 @@ public class Dog extends Pet {
         }
 
         return "Питомец - Собака\n" + //
-                "кличка - " + super.getName() + "\n" + //
-                "дата рождения - " + super.getBirthDate() + "\n" + //
-                "хозяин - " + super.getOwner() + "\n" + //
+                "кличка - " + this.getName() + "\n" + //
+                "дата рождения - " + this.getBirthDate() + "\n" + //
+                "хозяин - " + this.getOwner() + "\n" + //
                 "вакцинирован - " + vaccinated + "\n" + //
                 "цвет - " + this.getBreed() + "\n" + //
-                "дрессирован - " + trained;
+                "дрессирован - " + trained + "\n" + //
+                "команды животного - " +  this.getCommands();
     }
 
 }

@@ -37,16 +37,17 @@ public class Hamster extends Pet {
     public String toString() {
 
         String vaccinated = "нет";
-        if (super.isVaccinated()) {
+        if (this.isVaccinated()) {
             vaccinated = "да";
         }
 
         return "Питомец - Хомяк\n" + //
-                "кличка - " + super.getName() + "\n" + //
-                "дата рождения - " + super.getBirthDate() + "\n" + //
-                "хозяин - " + super.getOwner() + "\n" + //
+                "кличка - " + this.getName() + "\n" + //
+                "дата рождения - " + this.getBirthDate() + "\n" + //
+                "хозяин - " + this.getOwner() + "\n" + //
                 "вакцинирован - " + vaccinated + "\n" + //
-                "тип клетки - " + this.getCageType();
+                "тип клетки - " + this.getCageType() + "\n" + //
+                "команды животного - " +  this.getCommands();
     }
 
 }

@@ -42,7 +42,7 @@ public class Cat extends Pet {
     public String toString() {
 
         String vaccinated = "нет";
-        if (super.isVaccinated()) {
+        if (this.isVaccinated()) {
             vaccinated = "да";
         }
 
@@ -52,12 +52,13 @@ public class Cat extends Pet {
         }
 
         return "Питомец - Кошка\n" + //
-                "кличка - " + super.getName() + "\n" + //
-                "дата рождения - " + super.getBirthDate() + "\n" + //
-                "хозяин - " + super.getOwner() + "\n" + //
+                "кличка - " + this.getName() + "\n" + //
+                "дата рождения - " + this.getBirthDate() + "\n" + //
+                "хозяин - " + this.getOwner() + "\n" + //
                 "вакцинирована - " + vaccinated + "\n" + //
                 "цвет - " + this.getColor() + "\n" + //
-                "стерилизована - " + neutered;
+                "стерилизована - " + neutered + "\n" + //
+                "команды животного - " +  this.getCommands();
     }
 
 }

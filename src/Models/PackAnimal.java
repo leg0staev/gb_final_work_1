@@ -18,16 +18,4 @@ public abstract class PackAnimal extends Animal {
         return this.loadCapacity;
     }
 
-    public String getName() {
-        return super.getName();
-    }
-
-    public LocalDate getBirthDate() {
-        return super.getBirthDate();
-    }
-
-    public ArrayList<String> getCommands() {
-        return super.getCommands();
-    }
-
 }

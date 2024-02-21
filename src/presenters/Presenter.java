@@ -113,32 +113,33 @@ public class Presenter {
         view.consoleClear();
         view.showHorseAddinHeading();
 
-        String  horseName = view.getAnimalName();
+        String horseName = view.getAnimalName();
         LocalDate horseBirth = view.getAnimalBirth();
-        int  horseLoadCap = view.getLoadCapacity();
+        int horseLoadCap = view.getLoadCapacity();
         String horseMainColor = view.getColor();
 
         model.addHorse(horseName, horseBirth, horseLoadCap, horseMainColor);
         view.showSuccessAddinMess();
     }
 
-    public void findAnimal(){
+    public void printAnimal() {
         String animalName = view.getAnimalName().toLowerCase();
-        ArrayList<Animal> animals = model.getCurrentRegistry();
-        for (Animal animal : animals) {
-            if (animal.getName().toLowerCase().equals(animalName)) {
-                view.display(animal.toString());
-            } else {
-                view.showWrongNameMess();
-            }
-
+        Animal animal = model.findAnimal(animalName);
+        if (animal != null) {
+            view.display(animal.toString());
+        } else {
+            view.showWrongNameMess();
         }
+
+
     }
 
-    public void showAllAnimals(){
+    public void showAllAnimals() {
         ArrayList<Animal> animals = model.getCurrentRegistry();
+        int counter = 1;
         for (Animal animal : animals) {
-            view.display(animal.toString());
+            view.display("======\n" + //
+                    animal.toString());
         }
     }
 

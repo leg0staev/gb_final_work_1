@@ -16,7 +16,8 @@ public class ConsoleView implements View {
 
     @Override
     public String showMainMenu() {
-        System.out.println("МЕНЮ:\n" + //
+        System.out.println("________\n" + //
+                "МЕНЮ:\n" + //
                 "________\n" + //
                 "1. Добавить питомца\n" + //
                 "2. Найти питомца\n" + //

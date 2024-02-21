@@ -72,7 +72,7 @@ public class App {
                     }
                     break;
                 case "2":
-                    presenter.findAnimal();
+                    presenter.printAnimal();
                     break;
                 case "3":
                     presenter.showAllAnimals();

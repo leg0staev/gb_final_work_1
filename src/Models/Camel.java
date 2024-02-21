@@ -1,5 +1,6 @@
 package Models;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Camel extends PackAnimal {
 
@@ -27,13 +28,18 @@ public class Camel extends PackAnimal {
         return this.humpCount;
     }
 
+    public ArrayList<String> getCommands() {
+        return super.getCommands();
+    }
+
     @Override
     public String toString() {
         return "Питомец - Верблюд\n" + //
-        "кличка - " + super.getName() + "\n" + //
-        "дата рождения - " + super.getBirthDate() + "\n" + //
-        "грузоподъемность - " + super.getLoadCapacity() + "\n" + //
-        "Колиество горбов - " + this.getHumpCount() ;
+                "кличка - " + this.getName() + "\n" + //
+                "дата рождения - " + this.getBirthDate() + "\n" + //
+                "грузоподъемность - " + this.getLoadCapacity() + "\n" + //
+                "Колиество горбов - " + this.getHumpCount() + "\n" + //
+                "команды животного - " +  this.getCommands();
     }
 
 }

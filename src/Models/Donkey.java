@@ -31,10 +31,11 @@ public class Donkey extends PackAnimal {
     @Override
     public String toString() {
         return "Питомец - Осел\n" + //
-                "кличка - " + super.getName() + "\n" + //
-                "дата рождения - " + super.getBirthDate() + "\n" + //
-                "грузоподъемность - " + super.getLoadCapacity() + "\n" + //
-                "Колиество горбов - " + this.getEarLength();
+                "кличка - " + this.getName() + "\n" + //
+                "дата рождения - " + this.getBirthDate() + "\n" + //
+                "грузоподъемность - " + this.getLoadCapacity() + "\n" + //
+                "Колиество горбов - " + this.getEarLength() + "\n" + //
+                "команды животного - " +  this.getCommands();
     }
 
 }

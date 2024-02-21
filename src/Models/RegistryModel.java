@@ -59,4 +59,12 @@ public class RegistryModel {
         return this.animals;
     }
 
+    public Animal findAnimal(String animalName) {
+        for (Animal animal : this.animals) {
+            if (animal.getName().toLowerCase().equals(animalName)) {
+                return animal;
+            }
+        }
+        return null;
+    }
 }
