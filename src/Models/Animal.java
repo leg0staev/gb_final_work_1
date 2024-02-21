@@ -8,7 +8,7 @@ public abstract class Animal {
 
     private final String name;
     private final LocalDate birthDate;
-    private ArrayList<String> commands;
+    private final ArrayList<String> commands = new ArrayList<>();
 
     public Animal(String name, LocalDate birthDate) {
         this.name = name;
@@ -18,15 +18,15 @@ public abstract class Animal {
     public abstract void makeSound();
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public LocalDate getBirthDate() {
-        return birthDate;
+        return this.birthDate;
     }
 
     public ArrayList<String> getCommands() {
-        return commands;
+        return this.commands;
     }
 
     public void learnCommand(String command) {

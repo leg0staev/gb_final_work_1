@@ -30,13 +30,23 @@ public class Hamster extends Pet {
     }
 
     public String getCageType() {
-        return cageType;
+        return this.cageType;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Hamster [cageType=" + cageType + "]";
+
+        String vaccinated = "нет";
+        if (super.isVaccinated()) {
+            vaccinated = "да";
+        }
+
+        return "Питомец - Хомяк\n" + //
+                "кличка - " + super.getName() + "\n" + //
+                "дата рождения - " + super.getBirthDate() + "\n" + //
+                "хозяин - " + super.getOwner() + "\n" + //
+                "вакцинирован - " + vaccinated + "\n" + //
+                "тип клетки - " + this.getCageType();
     }
 
 }

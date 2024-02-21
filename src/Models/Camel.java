@@ -24,13 +24,16 @@ public class Camel extends PackAnimal {
     }
 
     public int getHumpCount() {
-        return humpCount;
+        return this.humpCount;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Camel [humpCount=" + humpCount + ", thirsty="  + "]";
+        return "Питомец - Верблюд\n" + //
+        "кличка - " + super.getName() + "\n" + //
+        "дата рождения - " + super.getBirthDate() + "\n" + //
+        "грузоподъемность - " + super.getLoadCapacity() + "\n" + //
+        "Колиество горбов - " + this.getHumpCount() ;
     }
 
 }

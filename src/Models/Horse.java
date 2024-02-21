@@ -25,13 +25,16 @@ public class Horse extends PackAnimal {
     }
 
     public String getManeColor() {
-        return maneColor;
+        return this.maneColor;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Horse [maneColor=" + maneColor + "]";
+        return "Питомец - Конь\n" + //
+                "кличка - " + super.getName() + "\n" + //
+                "дата рождения - " + super.getBirthDate() + "\n" + //
+                "грузоподъемность - " + super.getLoadCapacity() + "\n" + //
+                "Колиество горбов - " + this.getManeColor();
     }
 
 }

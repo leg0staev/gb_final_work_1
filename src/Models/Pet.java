@@ -1,7 +1,7 @@
 package Models;
 
-import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public abstract class Pet extends Animal {
 
@@ -18,7 +18,7 @@ public abstract class Pet extends Animal {
         return owner;
     }
 
-    public Boolean getVaccinated() {
+    public Boolean isVaccinated() {
         return vaccinated;
     }
 
@@ -27,4 +27,17 @@ public abstract class Pet extends Animal {
     }
 
     public abstract void play();
+
+    public String getName() {
+        return super.getName();
+    }
+
+    public LocalDate getBirthDate() {
+        return super.getBirthDate();
+    }
+
+    public ArrayList<String> getCommands() {
+        return super.getCommands();
+    }
+
 }

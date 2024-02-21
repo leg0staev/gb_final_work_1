@@ -31,17 +31,33 @@ public class Dog extends Pet {
     }
 
     public String getBreed() {
-        return breed;
+        return this.breed;
     }
 
     public boolean isTrained() {
-        return trained;
+        return this.trained;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Dog [breed=" + breed + ", trained=" + trained + "]";
+
+        String vaccinated = "нет";
+        if (super.isVaccinated()) {
+            vaccinated = "да";
+        }
+
+        String trained = "нет";
+        if (this.isTrained()) {
+            trained = "да";
+        }
+
+        return "Питомец - Собака\n" + //
+                "кличка - " + super.getName() + "\n" + //
+                "дата рождения - " + super.getBirthDate() + "\n" + //
+                "хозяин - " + super.getOwner() + "\n" + //
+                "вакцинирован - " + vaccinated + "\n" + //
+                "цвет - " + this.getBreed() + "\n" + //
+                "дрессирован - " + trained;
     }
 
 }

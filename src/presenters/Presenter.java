@@ -1,9 +1,11 @@
 package presenters;
 
+import Models.Animal;
 import Models.RegistryModel;
 import Views.View;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Presenter {
 
@@ -118,6 +120,26 @@ public class Presenter {
 
         model.addHorse(horseName, horseBirth, horseLoadCap, horseMainColor);
         view.showSuccessAddinMess();
+    }
+
+    public void findAnimal(){
+        String animalName = view.getAnimalName().toLowerCase();
+        ArrayList<Animal> animals = model.getCurrentRegistry();
+        for (Animal animal : animals) {
+            if (animal.getName().toLowerCase().equals(animalName)) {
+                view.display(animal.toString());
+            } else {
+                view.showWrongNameMess();
+            }
+
+        }
+    }
+
+    public void showAllAnimals(){
+        ArrayList<Animal> animals = model.getCurrentRegistry();
+        for (Animal animal : animals) {
+            view.display(animal.toString());
+        }
     }
 
     public void exitApp() {

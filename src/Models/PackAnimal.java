@@ -1,6 +1,7 @@
 package Models;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public abstract class PackAnimal extends Animal {
 
@@ -14,7 +15,19 @@ public abstract class PackAnimal extends Animal {
     public abstract void carry();
 
     public int getLoadCapacity() {
-        return loadCapacity;
+        return this.loadCapacity;
+    }
+
+    public String getName() {
+        return super.getName();
+    }
+
+    public LocalDate getBirthDate() {
+        return super.getBirthDate();
+    }
+
+    public ArrayList<String> getCommands() {
+        return super.getCommands();
     }
 
 }

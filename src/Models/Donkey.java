@@ -25,13 +25,16 @@ public class Donkey extends PackAnimal {
     }
 
     public int getEarLength() {
-        return earLength;
+        return this.earLength;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Donkey [earLength=" + earLength + "]";
+        return "Питомец - Осел\n" + //
+                "кличка - " + super.getName() + "\n" + //
+                "дата рождения - " + super.getBirthDate() + "\n" + //
+                "грузоподъемность - " + super.getLoadCapacity() + "\n" + //
+                "Колиество горбов - " + this.getEarLength();
     }
 
 }
