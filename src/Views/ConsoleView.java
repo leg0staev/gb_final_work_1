@@ -8,7 +8,11 @@ import java.util.Scanner;
 
 public class ConsoleView implements View {
 
-    Scanner in = new Scanner(System.in);
+    Scanner in;
+
+    static {
+        new Scanner(System.in);
+    }
 
     public ConsoleView() {
         in = new Scanner(System.in);
@@ -20,8 +24,9 @@ public class ConsoleView implements View {
                 "МЕНЮ:\n" + //
                 "________\n" + //
                 "1. Добавить питомца\n" + //
-                "2. Найти питомца\n" + //
+                "2. Найти питомца по имени\n" + //
                 "3. Вывести всех питомцев\n" + //
+                "4. Добавить команду питомцу\n" + //
                 "0. Выход из программы\n" + //
                 "\n" + //
                 "Ваш выбор:");
@@ -227,6 +232,11 @@ public class ConsoleView implements View {
     @Override
     public String getCommandToTrain() {
         return getUTF8Str("Введите название команды: ");
+    }
+
+    @Override
+    public void showSuccessMsg() {
+        System.out.println("Успешно!");
     }
 
     private String getUTF8Str(String messageToConsole) {

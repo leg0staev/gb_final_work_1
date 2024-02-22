@@ -64,6 +64,8 @@ public interface View {
 
     void showAnimalTrainingHeading();
 
+    void showSuccessMsg();
+
     void display(String data);
 
 }

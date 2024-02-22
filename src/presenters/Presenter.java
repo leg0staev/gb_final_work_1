@@ -53,6 +53,7 @@ public class Presenter {
 
         model.addCat(catName, catBirth, catOwner, isCatVaccinated, catColor, isCatNeutered);
         view.showSuccessAddinMess();
+        view.userWaiting();
     }
 
     public void addDog() {
@@ -68,6 +69,7 @@ public class Presenter {
 
         model.addDog(dogName, dogBirth, dogOwner, isDogVaccinated, dogBreed, isDogTrained);
         view.showSuccessAddinMess();
+        view.userWaiting();
     }
 
     public void addHamster() {
@@ -82,6 +84,7 @@ public class Presenter {
 
         model.addHamster(hamsterName, hamsterBirth, hamsterOwner, isHamsterVaccinated, hamsterCageType);
         view.showSuccessAddinMess();
+        view.userWaiting();
     }
 
     public void addDonkey() {
@@ -95,6 +98,7 @@ public class Presenter {
 
         model.addDonkey(donkeyName, donkeyBirth, donkeyLoadCap, donkeyEarLength);
         view.showSuccessAddinMess();
+        view.userWaiting();
     }
 
     public void addCamel() {
@@ -108,6 +112,7 @@ public class Presenter {
 
         model.addCamel(camelName, camelBirth, camelLoadCap, camelHumpCount);
         view.showSuccessAddinMess();
+        view.userWaiting();
     }
 
     public void addHorse() {
@@ -121,6 +126,7 @@ public class Presenter {
 
         model.addHorse(horseName, horseBirth, horseLoadCap, horseMainColor);
         view.showSuccessAddinMess();
+        view.userWaiting();
     }
 
     public void printAnimal() {
@@ -128,8 +134,10 @@ public class Presenter {
         Animal animal = model.findAnimal(animalName);
         if (animal != null) {
             view.display(animal.toString());
+            view.userWaiting();
         } else {
             view.showWrongNameMess();
+            view.userWaiting();
         }
 
 
@@ -142,6 +150,7 @@ public class Presenter {
             view.display("======\n" + //
                     entry.getValue().toString());
         }
+        view.userWaiting();
     }
 
     public void trainAnimal() {
@@ -150,8 +159,12 @@ public class Presenter {
         if (animal != null) {
             String command = view.getCommandToTrain();
             animal.learnCommand(command);
+            model.addAnimal(animal.getId(), animal);
+            view.showSuccessMsg();
+            view.userWaiting();
         } else {
             view.showWrongNameMess();
+            view.userWaiting();
         }
 
     }
