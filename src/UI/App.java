@@ -8,13 +8,12 @@ import presenters.Presenter;
 public class App {
 
     static View view;
+    static RegistryModel model = new RegistryModel();
+    static Presenter presenter = new Presenter(model, view);
 
     static {
         view = new ConsoleView();
     }
-
-    static RegistryModel model = new RegistryModel();
-    static Presenter presenter = new Presenter(model, view);
 
     public static void startButtonClick() {
 
@@ -29,46 +28,46 @@ public class App {
                     switch (userChoice) {
                         case "1":
                             userChoice = presenter.showAddPetsMenu();
-                                switch (userChoice){
-                                    case "1":
-                                        presenter.addCat();
-                                        break;
-                                    case "2":
-                                        presenter.addDog();
-                                        break;
-                                    case "3":
-                                        presenter.addHamster();
-                                        break;
-                                    case "0":
-                                        break;
-                                    default:
-                                        presenter.unknownCommand();
-                                }
+                            switch (userChoice) {
+                                case "1":
+                                    presenter.addCat();
+                                    break;
+                                case "2":
+                                    presenter.addDog();
+                                    break;
+                                case "3":
+                                    presenter.addHamster();
+                                    break;
+                                case "0":
+                                    break;
+                                default:
+                                    presenter.unknownCommand();
+                            }
                             break;
                         case "2":
                             userChoice = presenter.showAddPackAnimalMenu();
-                                switch (userChoice){
-                                    case "1":
-                                        presenter.addHorse();
-                                        break;
-                                    case "2":
-                                        presenter.addCamel();
-                                        break;
-                                    case "3":
-                                        presenter.addDonkey();
-                                        break;
-                                    case "0":
-                                        break;
-                                    default:
-                                        presenter.unknownCommand();
+                            switch (userChoice) {
+                                case "1":
+                                    presenter.addHorse();
+                                    break;
+                                case "2":
+                                    presenter.addCamel();
+                                    break;
+                                case "3":
+                                    presenter.addDonkey();
+                                    break;
+                                case "0":
+                                    break;
+                                default:
+                                    presenter.unknownCommand();
 
-                                }
+                            }
                             break;
                         case "0":
                             break;
                         default:
                             presenter.unknownCommand();
-                        break;
+                            break;
                     }
                     break;
                 case "2":

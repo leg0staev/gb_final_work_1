@@ -15,8 +15,6 @@ public abstract class Animal {
         this.birthDate = birthDate;
     }
 
-    public abstract void makeSound();
-
     public void setId(int id) {
         this.id = id;
     }
@@ -40,4 +38,5 @@ public abstract class Animal {
     public int getId() {
         return id;
     }
+
 }

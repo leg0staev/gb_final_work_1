@@ -21,10 +21,4 @@ public abstract class Pet extends Animal {
         return vaccinated;
     }
 
-    public void setVaccinated(boolean vaccinated) {
-        this.vaccinated = vaccinated;
-    }
-
-    public abstract void play();
-    
 }

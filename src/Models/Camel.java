@@ -12,17 +12,6 @@ public class Camel extends PackAnimal {
 
     }
 
-    @Override
-    public void carry() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'carry'");
-    }
-
-    @Override
-    public void makeSound() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'makeSound'");
-    }
 
     public int getHumpCount() {
         return this.humpCount;

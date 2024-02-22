@@ -1,6 +1,5 @@
 package Models;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class Dog extends Pet {
@@ -12,22 +11,6 @@ public class Dog extends Pet {
         super(name, birthDate, owner, vaccinated);
         this.trained = trained;
         this.breed = breed;
-    }
-
-    public void fetch() {
-        throw new UnsupportedOperationException("Unimplemented method 'fetch'");
-    }
-
-    @Override
-    public void play() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'play'");
-    }
-
-    @Override
-    public void makeSound() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'makeSound'");
     }
 
     public String getBreed() {

@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public class ConsoleView implements View {
 
-    Scanner in;
-
     static {
         new Scanner(System.in);
     }
+
+    Scanner in;
 
     public ConsoleView() {
         in = new Scanner(System.in);
