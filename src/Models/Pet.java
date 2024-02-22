@@ -1,6 +1,5 @@
 package Models;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 public abstract class Pet extends Animal {
@@ -18,7 +17,7 @@ public abstract class Pet extends Animal {
         return owner;
     }
 
-    public Boolean getVaccinated() {
+    public Boolean isVaccinated() {
         return vaccinated;
     }
 
@@ -27,4 +26,5 @@ public abstract class Pet extends Animal {
     }
 
     public abstract void play();
+    
 }

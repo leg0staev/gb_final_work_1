@@ -1,9 +1,12 @@
 package presenters;
 
+import Models.Animal;
 import Models.RegistryModel;
 import Views.View;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Presenter {
 
@@ -83,7 +86,7 @@ public class Presenter {
 
     public void addDonkey() {
         view.consoleClear();
-        view.showDogAddinHeading();
+        view.showDonkeyAddinHeading();
 
         String donkeyName = view.getAnimalName();
         LocalDate donkeyBirth = view.getAnimalBirth();
@@ -111,13 +114,46 @@ public class Presenter {
         view.consoleClear();
         view.showHorseAddinHeading();
 
-        String  horseName = view.getAnimalName();
+        String horseName = view.getAnimalName();
         LocalDate horseBirth = view.getAnimalBirth();
-        int  horseLoadCap = view.getLoadCapacity();
+        int horseLoadCap = view.getLoadCapacity();
         String horseMainColor = view.getColor();
 
         model.addHorse(horseName, horseBirth, horseLoadCap, horseMainColor);
         view.showSuccessAddinMess();
+    }
+
+    public void printAnimal() {
+        String animalName = view.getAnimalName().toLowerCase();
+        Animal animal = model.findAnimal(animalName);
+        if (animal != null) {
+            view.display(animal.toString());
+        } else {
+            view.showWrongNameMess();
+        }
+
+
+    }
+
+    public void showAllAnimals() {
+        HashMap<Integer, Animal> animals = model.getCurrentRegistry();
+
+        for (Map.Entry<Integer, Animal> entry : animals.entrySet()) {
+            view.display("======\n" + //
+                    entry.getValue().toString());
+        }
+    }
+
+    public void trainAnimal() {
+        String animalName = view.getAnimalName().toLowerCase();
+        Animal animal = model.findAnimal(animalName);
+        if (animal != null) {
+            String command = view.getCommandToTrain();
+            animal.learnCommand(command);
+        } else {
+            view.showWrongNameMess();
+        }
+
     }
 
     public void exitApp() {

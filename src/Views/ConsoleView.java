@@ -16,7 +16,8 @@ public class ConsoleView implements View {
 
     @Override
     public String showMainMenu() {
-        System.out.println("МЕНЮ:\n" + //
+        System.out.println("________\n" + //
+                "МЕНЮ:\n" + //
                 "________\n" + //
                 "1. Добавить питомца\n" + //
                 "2. Найти питомца\n" + //
@@ -111,6 +112,12 @@ public class ConsoleView implements View {
     @Override
     public void showCamelAddinHeading() {
         System.out.println("ДОБАВЛЕНИЕ ВЕОБЛЮДА:\n" + //
+                "________\n");
+    }
+
+    @Override
+    public void showAnimalTrainingHeading() {
+        System.out.println("ОБУЧЕНИЕ ЖИВОТНОГО:\n" + //
                 "________\n");
     }
 
@@ -215,6 +222,11 @@ public class ConsoleView implements View {
     @Override
     public int getHumpCount() {
         return getInt("Введите количество горбов: ");
+    }
+
+    @Override
+    public String getCommandToTrain() {
+        return getUTF8Str("Введите название команды: ");
     }
 
     private String getUTF8Str(String messageToConsole) {

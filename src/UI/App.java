@@ -72,10 +72,13 @@ public class App {
                     }
                     break;
                 case "2":
-                    // presenter.findAnimal();
+                    presenter.printAnimal();
                     break;
                 case "3":
-                    // presenter.showAllAnimals();
+                    presenter.showAllAnimals();
+                    break;
+                case "4":
+                    presenter.trainAnimal();
                     break;
                 case "0":
                     RUN = false;

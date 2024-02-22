@@ -14,7 +14,7 @@ public abstract class PackAnimal extends Animal {
     public abstract void carry();
 
     public int getLoadCapacity() {
-        return loadCapacity;
+        return this.loadCapacity;
     }
 
 }

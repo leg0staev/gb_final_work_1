@@ -31,17 +31,35 @@ public class Dog extends Pet {
     }
 
     public String getBreed() {
-        return breed;
+        return this.breed;
     }
 
     public boolean isTrained() {
-        return trained;
+        return this.trained;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Dog [breed=" + breed + ", trained=" + trained + "]";
+
+        String vaccinated = "нет";
+        if (this.isVaccinated()) {
+            vaccinated = "да";
+        }
+
+        String trained = "нет";
+        if (this.isTrained()) {
+            trained = "да";
+        }
+
+        return "Питомец - Собака\n" + //
+                "id - " + this.getId() + "\n" + //
+                "кличка - " + this.getName() + "\n" + //
+                "дата рождения - " + this.getBirthDate() + "\n" + //
+                "хозяин - " + this.getOwner() + "\n" + //
+                "вакцинирован - " + vaccinated + "\n" + //
+                "цвет - " + this.getBreed() + "\n" + //
+                "дрессирован - " + trained + "\n" + //
+                "команды животного - " +  this.getCommands();
     }
 
 }

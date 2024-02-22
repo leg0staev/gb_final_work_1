@@ -1,6 +1,5 @@
 package Models;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class Hamster extends Pet {
@@ -30,13 +29,25 @@ public class Hamster extends Pet {
     }
 
     public String getCageType() {
-        return cageType;
+        return this.cageType;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Hamster [cageType=" + cageType + "]";
+
+        String vaccinated = "нет";
+        if (this.isVaccinated()) {
+            vaccinated = "да";
+        }
+
+        return "Питомец - Хомяк\n" + //
+                "id - " + this.getId() + "\n" + //
+                "кличка - " + this.getName() + "\n" + //
+                "дата рождения - " + this.getBirthDate() + "\n" + //
+                "хозяин - " + this.getOwner() + "\n" + //
+                "вакцинирован - " + vaccinated + "\n" + //
+                "тип клетки - " + this.getCageType() + "\n" + //
+                "команды животного - " +  this.getCommands();
     }
 
 }

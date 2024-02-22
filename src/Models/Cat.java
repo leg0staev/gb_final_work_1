@@ -1,6 +1,5 @@
 package Models;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class Cat extends Pet {
@@ -32,17 +31,35 @@ public class Cat extends Pet {
     }
 
     public String getColor() {
-        return color;
+        return this.color;
     }
 
     public boolean isNeutered() {
-        return neutered;
+        return this.neutered;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Cat [color=" + color + ", neutered=" + neutered + "]";
+
+        String vaccinated = "нет";
+        if (this.isVaccinated()) {
+            vaccinated = "да";
+        }
+
+        String neutered = "нет";
+        if (this.isNeutered()) {
+            neutered = "да";
+        }
+
+        return "Питомец - Кошка\n" + //
+                "id - " + this.getId() + "\n" + //
+                "кличка - " + this.getName() + "\n" + //
+                "дата рождения - " + this.getBirthDate() + "\n" + //
+                "хозяин - " + this.getOwner() + "\n" + //
+                "вакцинирована - " + vaccinated + "\n" + //
+                "цвет - " + this.getColor() + "\n" + //
+                "стерилизована - " + neutered + "\n" + //
+                "команды животного - " +  this.getCommands();
     }
 
 }

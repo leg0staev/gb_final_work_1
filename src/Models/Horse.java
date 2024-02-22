@@ -1,6 +1,4 @@
 package Models;
-
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class Horse extends PackAnimal {
@@ -25,13 +23,18 @@ public class Horse extends PackAnimal {
     }
 
     public String getManeColor() {
-        return maneColor;
+        return this.maneColor;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "Horse [maneColor=" + maneColor + "]";
+        return "Питомец - Конь\n" + //
+                "id - " + this.getId() + "\n" + //
+                "кличка - " + this.getName() + "\n" + //
+                "дата рождения - " + this.getBirthDate() + "\n" + //
+                "грузоподъемность - " + this.getLoadCapacity() + "\n" + //
+                "Колиество горбов - " + this.getManeColor() + "\n" + //
+                "команды животного - " +  this.getCommands();
     }
 
 }
