@@ -36,6 +36,8 @@ public interface View {
 
     int getHumpCount();
 
+    String getCommandToTrain();
+
     void consoleClear();
 
     void userWaiting();
@@ -59,6 +61,8 @@ public interface View {
     void showUnknownCommMess();
 
     void showWrongNameMess();
+
+    void showAnimalTrainingHeading();
 
     void display(String data);
 

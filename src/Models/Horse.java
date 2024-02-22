@@ -1,6 +1,4 @@
 package Models;
-
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class Horse extends PackAnimal {
@@ -31,6 +29,7 @@ public class Horse extends PackAnimal {
     @Override
     public String toString() {
         return "Питомец - Конь\n" + //
+                "id - " + this.getId() + "\n" + //
                 "кличка - " + this.getName() + "\n" + //
                 "дата рождения - " + this.getBirthDate() + "\n" + //
                 "грузоподъемность - " + this.getLoadCapacity() + "\n" + //

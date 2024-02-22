@@ -1,7 +1,6 @@
 package Models;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public abstract class PackAnimal extends Animal {
 

@@ -1,6 +1,5 @@
 package Models;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -9,6 +8,7 @@ public abstract class Animal {
     private final String name;
     private final LocalDate birthDate;
     private final ArrayList<String> commands = new ArrayList<>();
+    private int id;
 
     public Animal(String name, LocalDate birthDate) {
         this.name = name;
@@ -16,6 +16,10 @@ public abstract class Animal {
     }
 
     public abstract void makeSound();
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return this.name;
@@ -33,4 +37,7 @@ public abstract class Animal {
         this.commands.add(command);
     }
 
+    public int getId() {
+        return id;
+    }
 }

@@ -35,6 +35,7 @@ public class Camel extends PackAnimal {
     @Override
     public String toString() {
         return "Питомец - Верблюд\n" + //
+                "id - " + this.getId() + "\n" + //
                 "кличка - " + this.getName() + "\n" + //
                 "дата рождения - " + this.getBirthDate() + "\n" + //
                 "грузоподъемность - " + this.getLoadCapacity() + "\n" + //

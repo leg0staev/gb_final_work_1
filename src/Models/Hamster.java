@@ -1,6 +1,5 @@
 package Models;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 public class Hamster extends Pet {
@@ -42,6 +41,7 @@ public class Hamster extends Pet {
         }
 
         return "Питомец - Хомяк\n" + //
+                "id - " + this.getId() + "\n" + //
                 "кличка - " + this.getName() + "\n" + //
                 "дата рождения - " + this.getBirthDate() + "\n" + //
                 "хозяин - " + this.getOwner() + "\n" + //

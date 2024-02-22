@@ -52,6 +52,7 @@ public class Dog extends Pet {
         }
 
         return "Питомец - Собака\n" + //
+                "id - " + this.getId() + "\n" + //
                 "кличка - " + this.getName() + "\n" + //
                 "дата рождения - " + this.getBirthDate() + "\n" + //
                 "хозяин - " + this.getOwner() + "\n" + //

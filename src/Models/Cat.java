@@ -52,6 +52,7 @@ public class Cat extends Pet {
         }
 
         return "Питомец - Кошка\n" + //
+                "id - " + this.getId() + "\n" + //
                 "кличка - " + this.getName() + "\n" + //
                 "дата рождения - " + this.getBirthDate() + "\n" + //
                 "хозяин - " + this.getOwner() + "\n" + //

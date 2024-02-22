@@ -5,7 +5,8 @@ import Models.RegistryModel;
 import Views.View;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Presenter {
 
@@ -85,7 +86,7 @@ public class Presenter {
 
     public void addDonkey() {
         view.consoleClear();
-        view.showDogAddinHeading();
+        view.showDonkeyAddinHeading();
 
         String donkeyName = view.getAnimalName();
         LocalDate donkeyBirth = view.getAnimalBirth();
@@ -135,12 +136,24 @@ public class Presenter {
     }
 
     public void showAllAnimals() {
-        ArrayList<Animal> animals = model.getCurrentRegistry();
-        int counter = 1;
-        for (Animal animal : animals) {
+        HashMap<Integer, Animal> animals = model.getCurrentRegistry();
+
+        for (Map.Entry<Integer, Animal> entry : animals.entrySet()) {
             view.display("======\n" + //
-                    animal.toString());
+                    entry.getValue().toString());
         }
+    }
+
+    public void trainAnimal() {
+        String animalName = view.getAnimalName().toLowerCase();
+        Animal animal = model.findAnimal(animalName);
+        if (animal != null) {
+            String command = view.getCommandToTrain();
+            animal.learnCommand(command);
+        } else {
+            view.showWrongNameMess();
+        }
+
     }
 
     public void exitApp() {

@@ -77,6 +77,9 @@ public class App {
                 case "3":
                     presenter.showAllAnimals();
                     break;
+                case "4":
+                    presenter.trainAnimal();
+                    break;
                 case "0":
                     RUN = false;
                     presenter.exitApp();

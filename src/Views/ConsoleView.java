@@ -116,6 +116,12 @@ public class ConsoleView implements View {
     }
 
     @Override
+    public void showAnimalTrainingHeading() {
+        System.out.println("ОБУЧЕНИЕ ЖИВОТНОГО:\n" + //
+                "________\n");
+    }
+
+    @Override
     public void showSuccessAddinMess() {
         System.out.println("Питомец добавлен успешно!");
 
@@ -216,6 +222,11 @@ public class ConsoleView implements View {
     @Override
     public int getHumpCount() {
         return getInt("Введите количество горбов: ");
+    }
+
+    @Override
+    public String getCommandToTrain() {
+        return getUTF8Str("Введите название команды: ");
     }
 
     private String getUTF8Str(String messageToConsole) {
