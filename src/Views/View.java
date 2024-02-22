@@ -3,7 +3,7 @@ package Views;
 import java.time.LocalDate;
 
 public interface View {
-    
+
     String showMainMenu();
 
     String showAddSubMenu();

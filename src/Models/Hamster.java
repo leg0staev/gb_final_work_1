@@ -11,23 +11,6 @@ public class Hamster extends Pet {
         this.cageType = cageType;
     }
 
-    public void nibble() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'nibble'");
-    }
-
-    @Override
-    public void play() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'play'");
-    }
-
-    @Override
-    public void makeSound() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'makeSound'");
-    }
-
     public String getCageType() {
         return this.cageType;
     }

@@ -1,4 +1,5 @@
 package Models;
+
 import java.time.LocalDate;
 
 public class Horse extends PackAnimal {
@@ -8,18 +9,6 @@ public class Horse extends PackAnimal {
     public Horse(String name, LocalDate birthDate, int loadCapacity, String maneColor) {
         super(name, birthDate, loadCapacity);
         this.maneColor = maneColor;
-    }
-
-    @Override
-    public void carry() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'carry'");
-    }
-
-    @Override
-    public void makeSound() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'makeSound'");
     }
 
     public String getManeColor() {
@@ -34,7 +23,7 @@ public class Horse extends PackAnimal {
                 "дата рождения - " + this.getBirthDate() + "\n" + //
                 "грузоподъемность - " + this.getLoadCapacity() + "\n" + //
                 "Колиество горбов - " + this.getManeColor() + "\n" + //
-                "команды животного - " +  this.getCommands();
+                "команды животного - " + this.getCommands();
     }
 
 }

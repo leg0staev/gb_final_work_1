@@ -11,18 +11,6 @@ public class Donkey extends PackAnimal {
         this.earLength = earLength;
     }
 
-    @Override
-    public void carry() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'carry'");
-    }
-
-    @Override
-    public void makeSound() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'makeSound'");
-    }
-
     public int getEarLength() {
         return this.earLength;
     }

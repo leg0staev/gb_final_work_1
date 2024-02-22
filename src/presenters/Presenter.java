@@ -50,10 +50,18 @@ public class Presenter {
         boolean isCatVaccinated = view.isVaccinated();
         String catColor = view.getColor();
         boolean isCatNeutered = view.isNeutered();
-
-        model.addCat(catName, catBirth, catOwner, isCatVaccinated, catColor, isCatNeutered);
-        view.showSuccessAddinMess();
-        view.userWaiting();
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                model.addCat(catName, catBirth, catOwner, isCatVaccinated, catColor, isCatNeutered);
+                validInput = true;
+                view.showSuccessAddinMess();
+                view.userWaiting();
+            } catch (RuntimeException exception) {
+                view.display(exception.getMessage());
+                catName = view.getAnimalName();
+            }
+        }
     }
 
     public void addDog() {
@@ -66,10 +74,19 @@ public class Presenter {
         boolean isDogVaccinated = view.isVaccinated();
         String dogBreed = view.getBreed();
         boolean isDogTrained = view.isTrained();
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                model.addDog(dogName, dogBirth, dogOwner, isDogVaccinated, dogBreed, isDogTrained);
+                validInput = true;
+                view.showSuccessAddinMess();
+                view.userWaiting();
+            } catch (RuntimeException exception) {
+                view.display(exception.getMessage());
+                dogName = view.getAnimalName();
+            }
+        }
 
-        model.addDog(dogName, dogBirth, dogOwner, isDogVaccinated, dogBreed, isDogTrained);
-        view.showSuccessAddinMess();
-        view.userWaiting();
     }
 
     public void addHamster() {
@@ -81,10 +98,18 @@ public class Presenter {
         String hamsterOwner = view.getAnimalOwner();
         boolean isHamsterVaccinated = view.isVaccinated();
         String hamsterCageType = view.getCageType();
-
-        model.addHamster(hamsterName, hamsterBirth, hamsterOwner, isHamsterVaccinated, hamsterCageType);
-        view.showSuccessAddinMess();
-        view.userWaiting();
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                model.addHamster(hamsterName, hamsterBirth, hamsterOwner, isHamsterVaccinated, hamsterCageType);
+                validInput = true;
+                view.showSuccessAddinMess();
+                view.userWaiting();
+            } catch (RuntimeException exception) {
+                view.display(exception.getMessage());
+                hamsterName = view.getAnimalName();
+            }
+        }
     }
 
     public void addDonkey() {
@@ -95,10 +120,18 @@ public class Presenter {
         LocalDate donkeyBirth = view.getAnimalBirth();
         int donkeyLoadCap = view.getLoadCapacity();
         int donkeyEarLength = view.getEarLength();
-
-        model.addDonkey(donkeyName, donkeyBirth, donkeyLoadCap, donkeyEarLength);
-        view.showSuccessAddinMess();
-        view.userWaiting();
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                model.addDonkey(donkeyName, donkeyBirth, donkeyLoadCap, donkeyEarLength);
+                validInput = true;
+                view.showSuccessAddinMess();
+                view.userWaiting();
+            } catch (RuntimeException exception) {
+                view.display(exception.getMessage());
+                donkeyName = view.getAnimalName();
+            }
+        }
     }
 
     public void addCamel() {
@@ -110,9 +143,18 @@ public class Presenter {
         int camelLoadCap = view.getLoadCapacity();
         int camelHumpCount = view.getHumpCount();
 
-        model.addCamel(camelName, camelBirth, camelLoadCap, camelHumpCount);
-        view.showSuccessAddinMess();
-        view.userWaiting();
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                model.addCamel(camelName, camelBirth, camelLoadCap, camelHumpCount);
+                validInput = true;
+                view.showSuccessAddinMess();
+                view.userWaiting();
+            } catch (RuntimeException exception) {
+                view.display(exception.getMessage());
+                camelName = view.getAnimalName();
+            }
+        }
     }
 
     public void addHorse() {
@@ -124,9 +166,18 @@ public class Presenter {
         int horseLoadCap = view.getLoadCapacity();
         String horseMainColor = view.getColor();
 
-        model.addHorse(horseName, horseBirth, horseLoadCap, horseMainColor);
-        view.showSuccessAddinMess();
-        view.userWaiting();
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                model.addHorse(horseName, horseBirth, horseLoadCap, horseMainColor);
+                validInput = true;
+                view.showSuccessAddinMess();
+                view.userWaiting();
+            } catch (RuntimeException exception) {
+                view.display(exception.getMessage());
+                horseName = view.getAnimalName();
+            }
+        }
     }
 
     public void printAnimal() {
@@ -157,6 +208,7 @@ public class Presenter {
         String animalName = view.getAnimalName().toLowerCase();
         Animal animal = model.findAnimal(animalName);
         if (animal != null) {
+            view.showAnimalTrainingHeading();
             String command = view.getCommandToTrain();
             animal.learnCommand(command);
             model.addAnimal(animal.getId(), animal);
@@ -179,6 +231,5 @@ public class Presenter {
         view.showUnknownCommMess();
         view.userWaiting();
     }
-
 
 }
