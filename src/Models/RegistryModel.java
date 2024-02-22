@@ -7,6 +7,13 @@ import java.util.Map;
 public class RegistryModel {
 
     private final HashMap<Integer, Animal> animals = new HashMap<>();
+    public HashMap<Integer, Animal> getCurrentRegistry() {
+        return this.animals;
+    }
+
+    public void addAnimal (int id, Animal animal) {
+        this.animals.put(id, animal);
+    }
 
     public void addCamel(String name, LocalDate birthDate, int loadCapacity, int humpCount) {
 
@@ -62,9 +69,6 @@ public class RegistryModel {
 
     }
 
-    public HashMap<Integer, Animal> getCurrentRegistry() {
-        return this.animals;
-    }
 
     public Animal findAnimal(String animalName) {
         Animal animalToSeek;
